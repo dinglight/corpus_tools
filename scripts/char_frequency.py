@@ -16,7 +16,12 @@ def char_frequency(file_path):
     char_count_dict = dict()
     with codecs.open(file_path, encoding='utf-8-sig') as input_file:
         for line in input_file.readlines():
-            word = line.rstrip().split()[0]
+            line = line.rstrip()
+            # jump over empty line
+            if not line:
+                continue
+
+            word = line.split()[0]
             for char in word:
                 keys = char_count_dict.keys()
                 if char in keys:
