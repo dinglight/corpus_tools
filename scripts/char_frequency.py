@@ -31,5 +31,6 @@ def char_frequency(file_path):
     return char_count_dict
 
 if __name__ == '__main__':
-    print(sys.argv[1])
-    print(char_frequency(sys.argv[1]))
+    char_count_dict = char_frequency(sys.argv[1])
+    keys = char_count_dict.keys()
+    print([hex(ord(code)) for code in sorted(keys)])
